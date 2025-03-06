@@ -1,38 +1,53 @@
-
 # Predictive Model for International Flight Delays
 
-This project develops a machine learning model to predict international flight delays, using historical data and various relevant variables. The goal is to provide valuable information for airlines, airports, and passengers, improving operational decision-making and user experience.
+This project implements a machine learning model designed to predict international flight delays, leveraging historical flight data and various key features. By predicting delays of 15 minutes or more, this model aims to provide actionable insights for airlines, airports, and passengers, improving operational efficiency and the passenger experience.
 
-## Overview
+## Extended Description
 
-The model focuses on predicting whether a flight will experience a delay of 15 minutes or more (DEP_DEL15), based on features such as the number of seats, flight schedules, airline, and historical performance data. A supervised learning approach was used, training several models and selecting XGBoost due to its superior performance in key metrics such as ROC-AUC and accuracy.
+Flight delays are a critical concern for the aviation industry, affecting airlines, passengers, and airport operations. The challenge lies in accurately forecasting delays so that airlines can take preemptive actions to mitigate their impact. This project addresses this issue by developing a machine learning model capable of predicting whether a flight will experience a delay of 15 minutes or more, based on a wide range of variables.
 
-## Methodology
+The dataset used in this project contains historical flight data, which includes flight schedules, airline information, weather conditions, and operational statistics. The model uses these features to train and predict potential delays, helping stakeholders make better decisions regarding flight operations, passenger communications, and resource allocation.
 
-1. **Data Preprocessing**: Handling missing values, removing low-variance variables, and transforming categorical variables using Weight of Evidence (WOE).
-2. **Variable Importance Analysis**: Using Information Value (IV) to select the most relevant variables.
-3. **Modeling and Hyperparameter Tuning**: Training models like Decision Tree Classifier, XGBClassifier, and MLPClassifier, with hyperparameter tuning through Grid Search and Randomized Search.
-4. **Evaluation and Metrics**: Evaluating model performance using ROC-AUC, precision, recall, and F1-score.
+### Data
 
-## Key Results
+The dataset consists of historical flight records, including features like:
+- **Airline Information**: The airline operating the flight.
+- **Flight Schedule**: Including flight times, number of seats, and aircraft type.
+- **Flight Status**: Whether the flight experienced a delay or was on time.
+- **Weather Conditions**: Such as temperature, wind speed, and visibility at the time of departure and arrival.
+- **Airports**: The locations of departure and destination airports.
 
-- The XGBoost model showed the best performance with a ROC-AUC of 0.6961 on the training set and 0.6958 on the test set.
-- A detailed analysis of the XGBoost model's hyperparameters was conducted, adjusting parameters like `colsample_bytree`, `max_depth`, and `learning_rate` to optimize performance.
-- The model's stability was evaluated using the Population Stability Index (PSI), identifying variables that require continuous monitoring.
-- SHAP values were calculated to interpret the influence of each variable on the model's predictions.
+### Model Overview
 
-## Model Usage
+To solve this problem, we used a **supervised learning approach** where the task is to predict a binary classification outcome: whether a flight will be delayed by 15 minutes or more. Various machine learning models were tested, including:
+- **Decision Tree Classifier**: A simple yet interpretable model that splits the data based on feature thresholds.
+- **XGBoost**: A highly efficient and scalable gradient boosting model, which outperformed others in accuracy.
+- **MLPClassifier**: A neural network-based model to capture complex patterns in the data.
 
-The model is designed to be implemented in flight management systems, providing real-time predictions on possible delays. The user interface allows operators to make informed decisions to mitigate the impact of delays.
+### Model Evaluation and Performance
+
+The performance of the models was evaluated using standard classification metrics:
+- **ROC-AUC**: Measures the area under the ROC curve, providing an aggregate measure of performance across all classification thresholds.
+- **Precision and Recall**: Evaluate how well the model identifies true positives and avoids false positives.
+- **F1-score**: A balance between precision and recall.
+
+Among all the models tested, **XGBoost** provided the best performance with a ROC-AUC score of **0.6961** on the training dataset and **0.6958** on the test dataset. This makes it the most suitable model for predicting flight delays in this context.
+
+### Future Work
+
+- **Model Optimization**: Further tuning of hyperparameters to improve the model's accuracy.
+- **Real-time Prediction**: Deploying the model to predict delays in real-time, integrating it with live flight data for more accurate forecasting.
+- **Feature Engineering**: Including additional features such as flight crew information, historical delay patterns, and external events like strikes or weather disruptions could improve prediction accuracy.
+- **Explainability**: Using SHAP (Shapley Additive Explanations) values to interpret and explain the model's decisions for stakeholders.
 
 ## Libraries Used
 
-- Pandas
-- Scikit-learn
-- XGBoost
-- Matplotlib
-- Seaborn
-- SHAP
+- **Pandas**: For data manipulation and preprocessing.
+- **Scikit-learn**: For machine learning models and evaluation metrics.
+- **XGBoost**: For building the gradient boosting model.
+- **Matplotlib**: For visualizations.
+- **Seaborn**: For statistical data visualization.
+- **SHAP**: For model explainability and interpreting feature importance.
 
 ## License
 
@@ -42,38 +57,51 @@ This project is distributed under the MIT License. See the `LICENSE` file for mo
 
 David Alejandro Garza Antuña - [davidonai312@gmail.com] - [+52 7229098161]
 
+
 # Analysis of Music Trends on Spotify through Clustering
 
-This project applies clustering algorithms to analyze music trends on Spotify, using a dataset with various song characteristics. The goal is to identify patterns and segment songs into meaningful groups to enhance personalization and marketing strategies in the streaming music industry.
+This project applies clustering algorithms to analyze music trends on Spotify, using a dataset with various characteristics of songs. The objective is to uncover hidden patterns in the music data and group songs into meaningful clusters that can inform marketing strategies and improve the streaming experience.
 
-## Overview
+## Extended Description
 
-The project explores how clustering techniques can uncover hidden patterns in music and improve decision-making in the streaming industry. Algorithms like K-Means and Gaussian Mixture Model (GMM) are used to group songs based on their acoustic and popularity features, facilitating trend identification and user experience personalization.
+As the music streaming industry continues to grow, understanding user preferences and the characteristics of popular songs becomes increasingly valuable. By applying **clustering techniques** to Spotify data, this project identifies patterns in song features, such as genre, tempo, acoustic features, and popularity. These insights can help optimize music recommendations, create targeted marketing strategies, and enhance user engagement.
 
-## Methodology
+### Data
 
-1. **Data Preprocessing**: Data cleaning and transformation, including removing duplicates, handling outliers, and engineering new variables.
-2. **Exploratory Data Analysis (EDA)**: Visualization and analysis of variable distributions and their correlations.
-3. **Dimensionality Reduction**: Applying PCA to reduce data complexity and improve modeling efficiency.
-4. **Model Selection and Evaluation**: Using K-Means and GMM to cluster songs, evaluating performance with metrics like silhouette score and Calinski-Harabasz index.
-5. **Cluster Profiling**: Interpreting the resulting clusters to identify musical trends and audience profiles.
+The dataset includes a variety of features about the songs on Spotify, including:
+- **Song Features**: Such as tempo, duration, and key.
+- **Popularity Metrics**: Metrics like the number of streams and likes.
+- **Audio Features**: Including loudness, danceability, valence (happiness), and energy.
+- **Genres**: Information about the genre of each song.
 
-## Key Results
+### Model Overview
 
-- Identification of distinct clusters representing different musical profiles, from classical acoustic songs to high-energy modern hits.
-- Comparative evaluation of K-Means and GMM, highlighting their strengths and weaknesses in the context of music segmentation.
-- Development of personalized marketing strategies based on identified clusters, improving the relevance of recommendations and user engagement.
+In this project, two clustering algorithms were employed:
+- **K-Means**: A widely used unsupervised learning algorithm that partitions data into a predefined number of clusters.
+- **Gaussian Mixture Model (GMM)**: A probabilistic model that assumes all data points are generated from a mixture of several Gaussian distributions.
 
-## Model Usage
+### Model Evaluation and Results
 
-The model allows streaming platforms and music professionals to better understand user preferences and optimize content promotion. The generated clusters can be used to create thematic playlists, personalize recommendations, and design targeted marketing campaigns.
+The clustering models were evaluated using:
+- **Silhouette Score**: A metric to evaluate how similar each point is to its own cluster compared to other clusters.
+- **Calinski-Harabasz Index**: Measures the ratio of the sum of between-cluster dispersion to within-cluster dispersion.
+
+Key findings from the analysis include:
+- Distinct clusters representing different musical genres, such as classical acoustic songs and energetic pop hits.
+- The K-Means algorithm performed well in identifying compact, well-separated clusters, while the GMM provided a more nuanced view with overlapping clusters that reflect real-world music trends.
+
+### Future Work
+
+- **Dynamic Clustering**: Implementing real-time clustering as new songs are added to the Spotify platform.
+- **Personalization**: Developing personalized music recommendation systems based on user preferences and cluster profiles.
+- **Market Segmentation**: Using clusters to identify specific listener segments and tailor marketing campaigns accordingly.
 
 ## Libraries Used
 
-- Pandas
-- Scikit-learn
-- Matplotlib
-- Seaborn
+- **Pandas**: For data manipulation and analysis.
+- **Scikit-learn**: For clustering algorithms and evaluation metrics.
+- **Matplotlib**: For visualizing clusters and song features.
+- **Seaborn**: For advanced statistical visualizations.
 
 ## License
 
@@ -84,7 +112,8 @@ This project is distributed under the MID License. See the `LICENSE` file for mo
 David Alejandro Garza Antuña - [davidonai312@gmail.com] - [+52 7229098161]
 
 
--------------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------------------
 
 # Modelo Predictivo de Retrasos en Vuelos Internacionales
 
