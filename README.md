@@ -19,7 +19,7 @@ The dataset consists of historical flight records, including features like:
 
 ### Model Overview
 
-To solve this problem, we used a **supervised learning approach** where the task is to predict a binary classification outcome: whether a flight will be delayed by 15 minutes or more. Various machine learning models were tested, including:
+To solve this problem, I used a **supervised learning approach** where the task is to predict a binary classification outcome: whether a flight will be delayed by 15 minutes or more. Various machine learning models were tested, including:
 - **Decision Tree Classifier**: A simple yet interpretable model that splits the data based on feature thresholds.
 - **XGBoost**: A highly efficient and scalable gradient boosting model, which outperformed others in accuracy.
 - **MLPClassifier**: A neural network-based model to capture complex patterns in the data.
