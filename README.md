@@ -70,6 +70,8 @@ A **CNN architecture** was designed to extract hierarchical features from MRI sc
 
 This project is distributed under the MIT License. See the `LICENSE` file for more details.
 
+**Attribution Required**: If you use this code, please credit this repository and its author.
+
 ## Contact
 
 David Alejandro Garza Antuña - [davidonai312@gmail.com] - [+52 7229098161]
@@ -132,6 +134,9 @@ Among all the models tested, **XGBoost** provided the best performance with a RO
 
 This project is distributed under the MIT License. See the `LICENSE` file for more details.
 
+**Attribution Required**: If you use this code, please credit this repository and its author.
+
+
 ## Contact
 
 David Alejandro Garza Antuña - [davidonai312@gmail.com] - [+52 7229098161]
@@ -186,6 +191,9 @@ Key findings from the analysis include:
 
 This project is distributed under the MID License. See the `LICENSE` file for more details.
 
+**Attribution Required**: If you use this code, please credit this repository and its author.
+
+
 ## Contact
 
 David Alejandro Garza Antuña - [davidonai312@gmail.com] - [+52 7229098161]
@@ -233,6 +241,8 @@ El modelo está diseñado para ser implementado en sistemas de gestión de vuelo
 
 Este proyecto se distribuye bajo la licencia MIT. Consulta el archivo `LICENSE` para más detalles.
 
+**Atribución requerida**: Si usas este código, menciona este repositorio y su autor.
+
 ## Contacto
 
 
@@ -274,6 +284,8 @@ El modelo permite a las plataformas de streaming y a los profesionales de la mú
 ## Licencia
 
 Este proyecto se distribuye bajo la licencia MID. Consulta el archivo `LICENSE` para más detalles.
+
+**Atribución requerida**: Si usas este código, menciona este repositorio y su autor.
 
 ## Contacto
 
