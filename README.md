@@ -1,3 +1,84 @@
+# Alzheimer Detection through MRI Image Classification Using CNNs
+
+This project implements a convolutional neural network (CNN) model to classify MRI images into four stages of Alzheimer's disease. By detecting early structural brain changes, this model aims to enhance clinical decision-making, optimize healthcare resource management, and improve patient outcomes through timely interventions.
+
+## Extended Description
+
+Alzheimer's disease poses significant challenges to healthcare systems globally, with late diagnosis leading to increased costs and reduced treatment efficacy. This project addresses these challenges by developing a CNN-based model that classifies MRI scans into four categories: Alzheimer's Disease (AD), Cognitively Normal (CN), Early Mild Cognitive Impairment (EMCI), and Late Mild Cognitive Impairment (LMCI). The solution combines advanced preprocessing, data augmentation, and optimized CNN architectures to achieve high diagnostic accuracy.
+
+The dataset includes MRI scans from patients across different disease stages. The model identifies subtle anatomical patterns, such as hippocampal atrophy, enabling early detection and precise classification. Results demonstrate robust performance, with actionable insights for both clinical and business applications in healthcare.
+
+### Data
+
+The dataset comprises **33,984 preprocessed MRI images** categorized as follows:
+- **AD (Alzheimer Disease)**: 8,960 images showing marked cerebral atrophy.
+- **CN (Cognitively Normal)**: 6,464 control group images.
+- **EMCI (Early Mild Cognitive Impairment)**: 9,600 images with subtle structural changes.
+- **LMCI (Late Mild Cognitive Impairment)**: 8,960 images with pronounced anatomical alterations.
+
+**Preprocessing Steps**:
+- **Resizing**: Standardized to 128×128 pixels.
+- **Normalization**: Pixel values scaled to [0, 1].
+- **Data Augmentation**: Applied rotations, zoom, brightness adjustments, and shear transformations using `ImageDataGenerator`.
+- **Validation Split**: 80% training, 20% validation.
+
+### Model Overview
+
+A **CNN architecture** was designed to extract hierarchical features from MRI scans:
+- **Convolutional Blocks**: Three blocks with 64→128 filters, ReLU activation, and MaxPooling for dimensionality reduction.
+- **Regularization**: Dropout (20-50%) and Batch Normalization to prevent overfitting.
+- **Global Average Pooling**: Reduces spatial dimensions before dense layers.
+- **Output Layer**: Softmax activation for multi-class classification.
+
+**Training Configuration**:
+- **Optimizer**: Adam (learning rate = 0.001).
+- **Loss Function**: Categorical cross-entropy.
+- **Callbacks**: Early Stopping, ReduceLROnPlateau, and Model Checkpoint.
+
+### Model Evaluation and Performance
+
+- **Training Accuracy**: 95.4% | **Validation Accuracy**: 93.9%.
+- **Confusion Matrix Analysis**:
+  - **CN**: Perfect classification (100% recall).
+  - **AD/LMCI/EMCI**: Minor misclassifications, primarily between EMCI and LMCI due to anatomical similarities.
+- **Class-Specific Metrics**:
+
+| Category | Precision | Recall |
+|----------|-----------|--------|
+| AD       | 96%       | 98%    |
+| CN       | 99%       | 100%   |
+| EMCI     | 92%       | 88%    |
+| LMCI     | 89%       | 89%    |
+
+**Key Insight**: The model achieves high generalizability, with a macro-averaged F1-score of 0.94.
+
+### Future Work
+
+- **EMCI vs. LMCI Differentiation**: Improve feature extraction to reduce misclassification between these stages.
+- **Real-Time Integration**: Deploy the model in hospital systems for automated diagnostic support.
+- **Explainability**: Use Grad-CAM or SHAP to visualize region-specific model decisions.
+- **Hyperparameter Tuning**: Optimize dropout rates and learning schedules for higher precision.
+
+## Libraries Used
+
+- **Keras/TensorFlow**: For CNN architecture and training.
+- **Pandas/NumPy**: For data handling.
+- **Matplotlib/Seaborn**: For visualizations (e.g., average class images, metric plots).
+- **Scikit-learn**: For evaluation metrics (confusion matrix, F1-score).
+
+## License
+
+This project is distributed under the MIT License. See the `LICENSE` file for more details.
+
+**Attribution Required**: If you use this code, please credit this repository and its author.
+
+## Contact
+
+David Alejandro Garza Antuña - [davidonai312@gmail.com] - [+52 7229098161]
+
+
+--------------------------------------------------------------------------------------------------------------
+
 # Predictive Model for International Flight Delays
 
 This project implements a machine learning model designed to predict international flight delays, leveraging historical flight data and various key features. By predicting delays of 15 minutes or more, this model aims to provide actionable insights for airlines, airports, and passengers, improving operational efficiency and the passenger experience.
@@ -53,6 +134,9 @@ Among all the models tested, **XGBoost** provided the best performance with a RO
 
 This project is distributed under the MIT License. See the `LICENSE` file for more details.
 
+**Attribution Required**: If you use this code, please credit this repository and its author.
+
+
 ## Contact
 
 David Alejandro Garza Antuña - [davidonai312@gmail.com] - [+52 7229098161]
@@ -107,6 +191,9 @@ Key findings from the analysis include:
 
 This project is distributed under the MID License. See the `LICENSE` file for more details.
 
+**Attribution Required**: If you use this code, please credit this repository and its author.
+
+
 ## Contact
 
 David Alejandro Garza Antuña - [davidonai312@gmail.com] - [+52 7229098161]
@@ -154,6 +241,8 @@ El modelo está diseñado para ser implementado en sistemas de gestión de vuelo
 
 Este proyecto se distribuye bajo la licencia MIT. Consulta el archivo `LICENSE` para más detalles.
 
+**Atribución requerida**: Si usas este código, menciona este repositorio y su autor.
+
 ## Contacto
 
 
@@ -195,6 +284,8 @@ El modelo permite a las plataformas de streaming y a los profesionales de la mú
 ## Licencia
 
 Este proyecto se distribuye bajo la licencia MID. Consulta el archivo `LICENSE` para más detalles.
+
+**Atribución requerida**: Si usas este código, menciona este repositorio y su autor.
 
 ## Contacto
 
