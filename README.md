@@ -155,6 +155,7 @@ Este proyecto está bajo la Licencia MIT. Consulta el archivo [LICENSE](LICENSE)
 ## Contacto
 
 David Alejandro Garza Antuña - [davidonai312@gmail.com] - [+52 7229098161]  
+
 --------------------------------------------------------------------------------------------------------------
 
 
